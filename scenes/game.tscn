@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2c2l7vrrfxxt"]
+[gd_scene load_steps=15 format=3 uid="uid://d2c2l7vrrfxxt"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_a6rt3"]
 [ext_resource type="PackedScene" uid="uid://d31hyrrj2qlkn" path="res://scenes/player.tscn" id="1_lgncp"]
 [ext_resource type="Texture2D" uid="uid://cioc1ooa770hg" path="res://assets/sprites/world_tileset.png" id="2_iaq7e"]
 [ext_resource type="PackedScene" uid="uid://cplxabsy1avim" path="res://scenes/platform.tscn" id="3_0qx7h"]
 [ext_resource type="PackedScene" uid="uid://n38lvl7ltkpq" path="res://scenes/coin.tscn" id="4_63ek5"]
 [ext_resource type="PackedScene" uid="uid://d036d7m4n4fvi" path="res://scenes/killzone.tscn" id="5_s5sjl"]
 [ext_resource type="PackedScene" uid="uid://bmthwom76ymkm" path="res://scenes/slime.tscn" id="6_k6dvm"]
+[ext_resource type="FontFile" uid="uid://dmkrp837qtnns" path="res://assets/fonts/PixelOperator8.ttf" id="8_i7s24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve6ri"]
 texture = ExtResource("2_iaq7e")
@@ -476,6 +478,19 @@ _data = {
 distance = -113.0
 
 [node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_a6rt3")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 606.0
+offset_top = -103.0
+offset_right = 878.0
+offset_bottom = -80.0
+theme_override_fonts/font = ExtResource("8_i7s24")
+theme_override_font_sizes/font_size = 8
+text = "You collected X coins!"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rdovp")
