@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://d036d7m4n4fvi"]
 
-[ext_resource type="Script" path="res://scenes/killzone.gd" id="1_eme47"]
+[ext_resource type="Script" path="res://scripts/killzone.gd" id="1_hbd5i"]
 
 [node name="Killzone" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_eme47")
+script = ExtResource("1_hbd5i")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
