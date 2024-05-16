@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://0ta4u4in0l4v"]
+
+[ext_resource type="Script" path="res://scripts/grape.gd" id="1_1qh64"]
+[ext_resource type="Texture2D" uid="uid://dnulwgp8h3iyu" path="res://assets/sprites/fruit.png" id="1_2q8x7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23jj4"]
+atlas = ExtResource("1_2q8x7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4em5"]
+atlas = ExtResource("1_2q8x7")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko18l"]
+atlas = ExtResource("1_2q8x7")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l7o0"]
+atlas = ExtResource("1_2q8x7")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0b3np"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23jj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4em5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko18l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l7o0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev5us"]
+size = Vector2(11, 15)
+
+[node name="Grape" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1qh64")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0b3np")
+autoplay = "default"
+frame_progress = 0.0980788
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_ev5us")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

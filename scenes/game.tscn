@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2c2l7vrrfxxt"]
+[gd_scene load_steps=16 format=3 uid="uid://d2c2l7vrrfxxt"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_a6rt3"]
 [ext_resource type="PackedScene" uid="uid://d31hyrrj2qlkn" path="res://scenes/player.tscn" id="1_lgncp"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d036d7m4n4fvi" path="res://scenes/killzone.tscn" id="5_s5sjl"]
 [ext_resource type="PackedScene" uid="uid://bmthwom76ymkm" path="res://scenes/slime.tscn" id="6_k6dvm"]
 [ext_resource type="FontFile" uid="uid://dmkrp837qtnns" path="res://assets/fonts/PixelOperator8.ttf" id="8_i7s24"]
+[ext_resource type="PackedScene" uid="uid://0ta4u4in0l4v" path="res://scenes/grape.tscn" id="9_ji3me"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve6ri"]
 texture = ExtResource("2_iaq7e")
@@ -558,3 +559,6 @@ position = Vector2(680, -72)
 
 [node name="Slime" parent="." instance=ExtResource("6_k6dvm")]
 position = Vector2(-168, -75)
+
+[node name="Grape" parent="." instance=ExtResource("9_ji3me")]
+position = Vector2(24, -11)
